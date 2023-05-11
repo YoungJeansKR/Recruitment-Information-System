@@ -6910,7 +6910,7 @@
 															"top": 151,
 															"width": 159.6435546875,
 															"height": 13,
-															"text": ":deleteApplyUI"
+															"text": ":ApplyRecruitmentUI"
 														},
 														{
 															"_type": "LabelView",
@@ -7010,7 +7010,7 @@
 															"top": 151,
 															"width": 143.03173828125,
 															"height": 13,
-															"text": ":deleteApply"
+															"text": ":ApplyRecruitment"
 														},
 														{
 															"_type": "LabelView",
@@ -8687,12 +8687,12 @@
 													},
 													"font": "Arial;13;0",
 													"left": 652.81396484375,
-													"top": 226,
+													"top": 224,
 													"width": 205.3720703125,
 													"height": 13,
-													"alpha": 0.0838366350562841,
-													"distance": 119.41942890501528,
-													"text": "1 : *(for all applies) getApplyInfo()"
+													"alpha": 0.10050059066595524,
+													"distance": 119.60351165413162,
+													"text": "1 : *(for all Applies) getApplyInfo()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -10711,7 +10711,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH/BgHTwRKGyg="
 									},
-									"name": "*(for all applies) getApplyInfo()",
+									"name": "*(for all Applies) getApplyInfo()",
 									"source": {
 										"$ref": "AAAAAAGIACtSp35xMvc="
 									},
@@ -10821,7 +10821,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH/BgHTwRKGyg="
 									},
-									"name": ":deleteApplyUI",
+									"name": ":ApplyRecruitmentUI",
 									"represent": {
 										"$ref": "AAAAAAGIACswgn5U370="
 									},
@@ -10833,7 +10833,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH/BgHTwRKGyg="
 									},
-									"name": ":deleteApply",
+									"name": ":ApplyRecruitment",
 									"represent": {
 										"$ref": "AAAAAAGIACtSp35w2R4="
 									},
