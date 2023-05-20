@@ -5,10 +5,10 @@ class Recruitment
 {
 public:
 	Recruitment();
-	Recruitment(std::string task, std::string numOfPeople, std::string deadline);
+	Recruitment(std::string task, std::string capacity, std::string deadline);
 
 private:
 	std::string task;
-	std::string numOfPeople;
+	std::string capacity;
 	std::string deadline;
 };
