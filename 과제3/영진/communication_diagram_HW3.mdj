@@ -52,8 +52,8 @@
 														"$ref": "AAAAAAGIC3Q/jYHMpzY="
 													},
 													"font": "Arial;13;0",
-													"left": 152.72998046875,
-													"top": 85,
+													"left": 24.72998046875,
+													"top": 77,
 													"width": 43.63720703125,
 													"height": 13,
 													"text": "SignUp"
@@ -65,18 +65,17 @@
 														"$ref": "AAAAAAGIC3Q/jYHMpzY="
 													},
 													"font": "Arial;13;1",
-													"left": 133,
-													"top": 85,
+													"left": 5,
+													"top": 77,
 													"width": 14.72998046875,
 													"height": 13,
 													"text": "sd"
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 128,
-											"top": 80,
-											"width": 857,
-											"height": 313,
+											"top": 72,
+											"width": 969,
+											"height": 321,
 											"nameLabel": {
 												"$ref": "AAAAAAGIC3Q/jYHNypE="
 											},
@@ -3714,9 +3713,9 @@
 														"$ref": "AAAAAAGIC3WQ97B5VYY="
 													},
 													"font": "Arial;13;0",
-													"left": 24.72998046875,
+													"left": 24.45703125,
 													"top": 5,
-													"width": 115.8798828125,
+													"width": 115.2451171875,
 													"height": 13,
 													"text": "Search Recruitment"
 												},
@@ -3729,7 +3728,7 @@
 													"font": "Arial;13;1",
 													"left": 5,
 													"top": 5,
-													"width": 14.72998046875,
+													"width": 14.45703125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -8954,9 +8953,9 @@
 														"$ref": "AAAAAAGIC3Yf09QppjQ="
 													},
 													"font": "Arial;13;0",
-													"left": 48.72998046875,
+													"left": 48.45703125,
 													"top": 37,
-													"width": 32.80810546875,
+													"width": 33.56982421875,
 													"height": 13,
 													"text": "Login"
 												},
@@ -8969,7 +8968,7 @@
 													"font": "Arial;13;1",
 													"left": 29,
 													"top": 37,
-													"width": 14.72998046875,
+													"width": 14.45703125,
 													"height": 13,
 													"text": "sd"
 												}
