@@ -17,6 +17,9 @@ public:
 	void addNewCompanyMember(Member* companymember);
 	void addNewGeneralMember(Member* generalmember);
 
+	void setLoginIndex(int i) { loginIndex = i + 1; }
+	int getLoginIndex() { return loginIndex; }
 private:
 	vector<Member*> memberList;
+	int loginIndex;
 };

@@ -26,7 +26,7 @@ void Login::login(string id, string password)
 	vector<Member*> memberList = (this->dataBase)->getMemberList();
 	for (i = 0; i < memberList.size(); i++) {
 		if ((memberList[i]->getId() == id) && (memberList[i]->getPassword() == password)) {
-			memberList[i]->setLoginIndex(i);
+			dataBase->setLoginIndex(i);
 		}
 	}
 }
