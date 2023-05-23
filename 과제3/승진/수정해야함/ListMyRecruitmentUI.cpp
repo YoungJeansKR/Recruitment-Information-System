@@ -14,9 +14,9 @@ void ListMyRecruitmentUI::StartInterface()
 
 }
 
-void ListMyRecruitmentUI::SelectShowList(ListMyRecruitment* listMyRecruitment, File* file)
+void ListMyRecruitmentUI::SelectShowRecruitmentList(ListMyRecruitment* listMyRecruitment, File* file)
 {
-	std::vector<Recruitment*> data = listMyRecruitment->ShowMyRecruitment();
+	std::vector<Recruitment*> data = listMyRecruitment->ShowMyRecruitments();
 
 	file->ofs << "3.2. 등록된 채용 정보 조회" << '\n';
 	for (Recruitment* recruitment : data)

@@ -1,25 +1,25 @@
 #include "CreateRecruitment.h"
 #include "CreateRecruitmentUI.h"
-#include "DataBase.h"
+#include "Member.h"
 #include "Recruitment.h"
 #include "CompanyMember.h"
 
 CreateRecruitment::CreateRecruitment()
 {
-	this->dataBase = nullptr;
+	this->member = nullptr;
 	createRecruitmentUI = new CreateRecruitmentUI();
-	createRecruitmentUI->StartInterface();
+	createRecruitmentUI->startInterface();
 }
 
-CreateRecruitment::CreateRecruitment(DataBase* dataBase)
+CreateRecruitment::CreateRecruitment(Member* member)
 {
-	this->dataBase = dataBase;
+	this->member = member;
 	createRecruitmentUI = new CreateRecruitmentUI();
-	createRecruitmentUI->StartInterface();
+	createRecruitmentUI->startInterface();
 }
 
-void CreateRecruitment::CreateRecruitment(std::string task, int capacity, std::string deadline)
+void CreateRecruitment::addNewRecruitment(std::string task, std::string capacity, std::string deadline)
 {
-	CompanyMember* companymember = dataBase->GetCompanyMemberList()[dataBase->GetLogInIndex()];
+	CompanyMember* companymember = member->getCompanyMemberList()[member->getLogInIndex()];
 	Recruitment* newRecruitment = new Recruitment(task, capacity, deadline);
 }

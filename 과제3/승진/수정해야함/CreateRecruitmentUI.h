@@ -6,9 +6,8 @@ class File;
 class CreateRecruitmentUI
 {
 public:
-	CreateRecruitmentUI();
+	createRecruitmentUI();
 
-	void StartInterface();
-
-	void GetRecruitmentForm(CreateRecruitment* createRecruitment, File* file);
+	void startInterface();
+	void createNewRecruitment(CreateRecruitment* createRecruitment, File* file);
 };
