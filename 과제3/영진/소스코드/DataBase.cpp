@@ -4,7 +4,6 @@
 #include "GeneralMember.h"
 
 DataBase::DataBase()
-	: loginIndex(-1)
 {
 	memberList.clear();
 }
@@ -12,11 +11,9 @@ DataBase::DataBase()
 void DataBase::addNewCompanyMember(Member* companymember)
 {
 	memberList.push_back(companymember);
-	loginIndex++;
 }
 
 void DataBase::addNewGeneralMember(Member* generalmember)
 {
 	memberList.push_back(generalmember);
-	loginIndex++;
 }

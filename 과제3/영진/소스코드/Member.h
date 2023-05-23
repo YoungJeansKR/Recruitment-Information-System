@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+
+
 class Member
 {
 public:
@@ -12,6 +14,8 @@ public:
 	string getId() { return id; }
 	string getPassword() { return password; }
 	int getUserType() { return user_type; }
+	void setLoginIndex(int i) { index = i + 1; }
+	int getLoginIndex() { return index; }
 
 private:
 	int user_type;		// 회원유형
@@ -19,4 +23,5 @@ private:
 	string ssn;			// 사업자번호, 주민번호
 	string id;			// 아이디
 	string password;	// 비밀번호
+	int index;			// 회원번호
 };
