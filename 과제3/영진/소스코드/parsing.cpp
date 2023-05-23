@@ -9,8 +9,8 @@ using namespace std;
 
 #include "SignUp.h"
 #include "SignUpUI.h"
-#include "LogIn.h"
-#include "LogInUI.h"
+#include "Login.h"
+#include "LoginUI.h"
 #include "SearchRecruitment.h"
 #include "SearchRecruitmentUI.h"
 
@@ -166,8 +166,8 @@ void join(DataBase* dataBase, File* file) {
 
 // "2.1. 로그인“ 메뉴 부분 
 void login(DataBase* dataBase, File* file) {
-	LogIn* logIn = new LogIn(dataBase);
-	logIn->getLogInUI()->login(logIn, file);
+	Login* login = new Login(dataBase);
+	login->getLoginUI()->login(login, file);
 }
 
 

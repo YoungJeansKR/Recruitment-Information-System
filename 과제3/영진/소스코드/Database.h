@@ -1,37 +1,25 @@
 #pragma once
-#include <vector>
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Member.h"
+#include "CompanyMember.h"
+#include "GeneralMember.h"
 using namespace std;
-
-class GeneralMember;
-class CompanyMember;
 
 class DataBase
 {
 public:
 	DataBase();
 
-	vector<CompanyMember*> GetCompanyMemberList() { return companyMemberList; }
-	vector<GeneralMember*> GetGeneralMemberList() { return generalMemberList; }
-	int GetLogInIndex() { return logInIndex; }
-	void SetLogInIndex(int index) { logInIndex = index; }
+	vector<Member*> getMemberList() { return memberList; }
+	int getLoginCnt() { return logincnt; }
+	void setLoginCnt(int cnt) { logincnt = cnt; }
 
-	void DeleteSeller(int index) { companyMemberList.erase(companyMemberList.begin() + index); }
-	void DeleteBuyer(int index) { generalMemberList.erase(generalMemberList.begin() + index); }
-
-	void addNewCompanyMember(CompanyMember* companymember) {
-		companyMemberList.push_back(companymember);
-		logInIndex++;
-	}
-	void addNewGeneralMember(GeneralMember* generalmember) {
-		generalMemberList.emplace_back(generalmember);
-		logInIndex++;
-	}
+	void addNewCompanyMember(Member* companymember);
+	void addNewGeneralMember(Member* generalmember);
 
 private:
-	vector<CompanyMember*> companyMemberList;
-	vector<GeneralMember*> generalMemberList;
-
-	int logInIndex;
+	vector<Member*> memberList;
+	int logincnt;
 };

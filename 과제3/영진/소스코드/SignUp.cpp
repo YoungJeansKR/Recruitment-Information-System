@@ -25,14 +25,14 @@ void SignUp::addNewMember(int user_type, string name, string ssn, string id, str
 	{
 	case 1:
 	{
-		CompanyMember* companymember = new CompanyMember(name, ssn, id, password);
+		Member* companymember = new CompanyMember(1, name, ssn, id, password);
 		dataBase->addNewCompanyMember(companymember);
 		break;
 	}
 	case 2:
 	{
-		GeneralMember* geeralmember = new GeneralMember(name, ssn, id, password);
-		dataBase->addNewGeneralMember(geeralmember);
+		Member* generalmember = new GeneralMember(2, name, ssn, id, password);
+		dataBase->addNewGeneralMember(generalmember);
 		break;
 	}
 	default:

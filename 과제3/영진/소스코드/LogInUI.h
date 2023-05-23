@@ -1,16 +1,16 @@
 #pragma once
 #include "Member.h"
 
-class LogIn;
+class Login;
 class File;
 
-class LogInUI
+class LoginUI
 {
 public:
-	LogInUI();
+	LoginUI();
 
 	void startInterface();
-	void login(LogIn* logIn, File* file);
+	void login(Login* logIn, File* file);
 private:
-	LogIn* logIn;
+	Login* logIn;
 };

@@ -3,20 +3,20 @@
 using namespace std;
 
 class DataBase;
-class LogInUI;
+class LoginUI;
 
-class LogIn
+class Login
 {
 public:
-	LogIn();
-	LogIn(DataBase* dataBase);
+	Login();
+	Login(DataBase* dataBase);
 
-	LogInUI* getLogInUI() { return logInUI; }
+	LoginUI* getLoginUI() { return loginUI; }
 
 	void login(string id, string password);
 private:
 	DataBase* dataBase;
-	LogInUI* logInUI;
+	LoginUI* loginUI;
 };
 
 

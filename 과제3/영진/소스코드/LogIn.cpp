@@ -1,33 +1,32 @@
-#include "LogIn.h"
-#include "LogInUI.h"
-#include "DataBase.h"
+#include "Login.h"
+#include "LoginUI.h"
+#include "Database.h"
 #include "Member.h"
 #include "CompanyMember.h"
 #include "GeneralMember.h"
 #include <vector>
 using namespace std;
 
-LogIn::LogIn() {
+Login::Login() {
 	this->dataBase = nullptr;
-	logInUI = new LogInUI();
-	logInUI->startInterface();
+	loginUI = new LoginUI();
+	loginUI->startInterface();
 }
 
-LogIn::LogIn(DataBase* dataBase) {
+Login::Login(DataBase* dataBase) {
 	this->dataBase = dataBase;
-	logInUI = new LogInUI();
-	logInUI->startInterface();
+	loginUI = new LoginUI();
+	loginUI->startInterface();
 }
 
-void LogIn::login(string id, string password)
+void Login::login(string id, string password)
 {
 	int i = 0;
 
-	vector<CompanyMember*> companymemberList = (this->dataBase)->GetCompanyMemberList();
-
-	for (i = 0; i < companymemberList.size(); i++) {
-		if ((companymemberList[i]->GetID() == id) && (companymemberList[i]->GetPassword() == password)) {
-			dataBase->SetLogInIndex(i);
+	vector<Member*> memberList = (this->dataBase)->getMemberList();
+	
+	for (i = 0; i < memberList.size(); i++) {
+		if ((memberList[i]->getId() == id) && (memberList[i]->getPassword() == password)) {
 		}
 	}
 }
