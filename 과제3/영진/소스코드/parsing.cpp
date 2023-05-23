@@ -11,8 +11,6 @@ using namespace std;
 #include "SignUpUI.h"
 #include "Login.h"
 #include "LoginUI.h"
-#include "SearchRecruitment.h"
-#include "SearchRecruitmentUI.h"
 
 // 상수 선언
 #define MAX_STRING 32
@@ -173,8 +171,6 @@ void login(DataBase* dataBase, File* file) {
 
 // "4.1. 채용 정보 검색“ 메뉴 부분
 void searchRecruitment(DataBase* dataBase, File* file) {
-	SearchRecruitment* recruitment = new SearchRecruitment(dataBase);
-	//recruitment->getSearchRecruitmentUI()->SearchRecruitment(recruitment, file);
 }
 
 
