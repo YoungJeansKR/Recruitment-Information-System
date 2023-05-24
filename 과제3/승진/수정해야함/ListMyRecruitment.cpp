@@ -1,25 +1,26 @@
 #include "ListMyRecruitment.h"
 #include "ListMyRecruitmentUI.h"
-#include "Member.h"
+#include "DataBase.h"
 #include "Recruitment.h"
 #include "CompanyMember.h"
 
 ListMyRecruitment::ListMyRecruitment()
 {
-	this->member = nullptr;
+	this->database = nullptr;
 	ListMyRecruitmentUI* listMyRecruitmentUI = new ListMyRecruitmentUI();
 	listMyRecruitmentUI->StartInterface();
 }
 
-ListMyRecruitment::ListMyRecruitment(DataBase* dataBase)
+ListMyRecruitment::ListMyRecruitment(DataBase* database)
 {
-	this->member = dataBase;
+	this->database = database;
 	ListMyRecruitmentUI* listMyRecruitmentUI = new ListMyRecruitmentUI();
 	listMyRecruitmentUI->StartInterface();
 }
 
-std::vector<Recruitment*> ListMyRecruitment::ShowMyRecruitment()
+std::vector<Recruitment*> ListMyRecruitment::ShowMyRecruitments()
 {
-	CompanyMember* companymember = member->GetSellerList()[member->GetLogInIndex()];
-	return companymember->GetlistRecruitment();
+	CompanyMember* companymember = database->listRecruitments()[database->GetLogInIndex()];
+	return CompanyMember->listRecruitments();
+
 }

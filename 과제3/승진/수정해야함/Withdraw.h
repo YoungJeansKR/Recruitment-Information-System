@@ -1,20 +1,20 @@
 #pragma once
 #include <iostream>
 
-class Member;
+class DataBase;
 class WithdrawUI;
 
 class Withdraw
 {
 public:
 	Withdraw();
-	Withdraw(Member* member);
+	Withdraw(DataBase* database);
 
 	WithdrawUI* GetWithdrawUI() { return withdrawUI; }
 
 	std::string TryWithdraw();
 
 private:
-	Member* member;
+	DataBase* database;
 	WithdrawUI* withdrawUI;
 };

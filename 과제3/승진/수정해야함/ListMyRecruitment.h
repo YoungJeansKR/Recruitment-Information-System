@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-class Member;
+class DataBase;
 class ListMyRecruitmentUI;
 class Recruitment;
 
@@ -9,13 +9,13 @@ class ListMyRecruitment
 {
 public:
 	ListMyRecruitment();
-	ListMyRecruitment(Member* member);
+	ListMyRecruitment(DataBase* database);
 
 	ListMyRecruitmentUI* GetListMyRecruitmentUI() { return listMyRecruitmentUI; }
 
 	std::vector<Recruitment*> ShowMyRecruitments();
 
 private:
-	Member* member;
+	DataBase* database;
 	ListMyRecruitmentUI* listMyRecruitmentUI;
 };

@@ -1,27 +1,27 @@
 #include "Withdraw.h"
 #include "WithdrawUI.h"
-#include "Member.h"
+#include "DataBase.h"
 
 Withdraw::Withdraw()
 {
-    this->member = nullptr;
+    this->database = nullptr;
     withdrawUI = new WithdrawUI();
     withdrawUI->StartInterface();
 }
 
-Withdraw::Withdraw(Member* member)
+Withdraw::Withdraw(DataBase* database)
 {
-    this->member = member;
+    this->database = database;
     withdrawUI = new WithdrawUI();
     withdrawUI->StartInterface();
 }
 
 std::string Withdraw::TryWithdraw()
 {
-    int index = this->member->GetLogInIndex();//?
-    std::vector<Member*> memberList = (this->dataBase)->GetMemberList();//?
+    int index = this->database->GetLogInIndex();//?
+    std::vector<Database*> memberList = (this->database)->GetMemberList();//?
 
     std::string returnId = memberList[index]->GetID();
-    (this->member)->deleteMember(index);
+    (this->database)->deleteMember(index);
     return returnId;
 }
