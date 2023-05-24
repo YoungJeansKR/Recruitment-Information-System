@@ -11,13 +11,14 @@ SignUpUI::SignUpUI()
 
 void SignUpUI::startInterface()
 {
-	// GUI��� PopUpâ ����, �̹� ���������� ���� ������̱� ������ �ƹ��� ����� ���� ����.
+    // GUI경우 PopUp창 생성, 이번 과제에서는 파일 입출력이기 때문에 아무런 기능을 하지 않음.
+
 }
 
 void SignUpUI::addNewMember(SignUp* signUp, File* file)
 {
-	// ���� �Է� �ޱ�
-	int user_type = 0;
+    // 파일 입력 받기
+    int user_type = 0;
 	string name = "";
 	string ssn = "";
 	string id = "";
