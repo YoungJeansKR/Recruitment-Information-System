@@ -37,7 +37,7 @@ SearchRecruitment::SearchRecruitment(DataBase *dataBase)
 /*
  * 함수 이름 : showRecruitmentDetails
  * 기능 : 채용 검색
- * 전달 인자 : 회사회원 이름
+ * 전달 인자 : 회사회원이름
  * 반환값 : 없음
  */
 Recruitment* SearchRecruitment::showRecruitmentDetails(std::string companyMemberName)

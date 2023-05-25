@@ -12,6 +12,7 @@ Recruitment::Recruitment() {
     capacity = "";
     deadline = "";
     businessID = "";
+    applicantCount = 0;
 }
 
 /*
@@ -25,4 +26,6 @@ Recruitment::Recruitment(std::string task, std::string capacity, std::string dea
     this->capacity = capacity;
     this->deadline = deadline;
     this->businessID = "";
+    this->applicantCount = 0;
+
 }

@@ -59,6 +59,7 @@ Recruitment* CancelApply::sendCancelApplyRequest(string companyMemberBuisnessId)
 		}
 	}
     generalMember->deleteApply(index);
+    foundRecruitment->setApplicantCount(foundRecruitment->getApplicantCount() - 1);
 
     return foundRecruitment;
 }
