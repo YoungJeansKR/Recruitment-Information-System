@@ -20,6 +20,9 @@ using namespace std;
 #include "CreateRecruitmentUI.h"
 #include "CreateRecruitment.h"
 
+#include "ApplyRecruitmentUI.h"
+#include "ApplyRecruitment.h"
+
 // 상수 선언
 #define MAX_STRING 32
 #define INPUT_FILE_NAME "input.txt"
@@ -32,6 +35,7 @@ void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
 void createRecruitment(DataBase* dataBase, File* file);
+void apply(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -44,6 +48,7 @@ void doTask() {
 
     File* file = new File();
     DataBase* dataBase = new DataBase();
+    Recruitment* curRecruitment = nullptr;
 
 	// 메뉴 파싱을 위한 level 구분을 위한 변수
 	int menu_level_1 = 0, menu_level_2 = 0;
@@ -116,7 +121,8 @@ void doTask() {
 					}
 					case 2: // "4.2. 채용 지원" 메뉴 부분
 					{
-						break;
+                        apply(dataBase, file);
+                        break;
 					}
 					case 3: // "4.3. 지원 정보 조회" 메뉴 부분
 					{
@@ -192,6 +198,12 @@ void logout(DataBase* dataBase, File* file) {
 void createRecruitment(DataBase* dataBase, File* file){
     CreateRecruitment* createRecruitment = new CreateRecruitment(dataBase);
     createRecruitment->getCreateRecruitmentUI()->getRecruitmentForm(createRecruitment, file);
+}
+
+void apply(DataBase* dataBase, File* file) {
+    ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
+    ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
+    applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
 }
 
 // 6.1. 종료
