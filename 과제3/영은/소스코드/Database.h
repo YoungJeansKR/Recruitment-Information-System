@@ -13,8 +13,6 @@ public:
 	DataBase();
 
 	vector<Member*> getMemberList() { return memberList; }
-    std::vector<CompanyMember*> getCompanyMemberList() { return companyMemberList; }
-    std::vector<GeneralMember*> getGeneralMemberList() { return generalMemberList; }
 
     void addNewCompanyMember(Member* companyMember);
 	void addNewGeneralMember(Member* generalMember);
@@ -25,7 +23,5 @@ public:
 	int getLoginIndex() { return loginIndex; }
 private:
 	vector<Member*> memberList;
-    std::vector<CompanyMember*> companyMemberList;
-    std::vector<GeneralMember*> generalMemberList;
     int loginIndex;
 };

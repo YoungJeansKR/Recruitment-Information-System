@@ -16,7 +16,7 @@ public:
 	{ }
 
     void createApply(Recruitment* recruitment);
-    vector<Recruitment*> getRecruitmentList() { return recruitmentList; }
+    vector<Recruitment*> getApplyList() { return applyList; }
 private:
-    vector<Recruitment*> recruitmentList;
+    vector<Recruitment*> applyList;
 };
