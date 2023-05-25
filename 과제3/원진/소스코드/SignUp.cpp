@@ -1,6 +1,6 @@
 #include "SignUp.h"
 #include "SignUpUI.h"
-#include "Database.h"
+#include "DataBase.h"
 #include "Member.h"
 #include "CompanyMember.h"
 #include "GeneralMember.h"

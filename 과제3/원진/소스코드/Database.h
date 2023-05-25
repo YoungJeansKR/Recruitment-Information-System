@@ -13,9 +13,12 @@ public:
 	DataBase();
 
 	vector<Member*> getMemberList() { return memberList; }
+	
 
 	void addNewCompanyMember(Member* companymember);
 	void addNewGeneralMember(Member* generalmember);
+	
+	void deleteMember(int index) { memberList.erase(memberList.begin() + index); }
 
 	void setLoginIndex(int i) { loginIndex = i; }
 	int getLoginIndex() { return loginIndex; }
