@@ -16,8 +16,10 @@ public:
     std::vector<CompanyMember*> getCompanyMemberList() { return companyMemberList; }
     std::vector<GeneralMember*> getGeneralMemberList() { return generalMemberList; }
 
-    void addNewCompanyMember(Member* companymember);
-	void addNewGeneralMember(Member* generalmember);
+    void addNewCompanyMember(Member* companyMember);
+	void addNewGeneralMember(Member* generalMember);
+
+    void deleteMember(int index) { memberList.erase(memberList.begin()+index); }
 
 	void setLoginIndex(int i) { loginIndex = i; }
 	int getLoginIndex() { return loginIndex; }

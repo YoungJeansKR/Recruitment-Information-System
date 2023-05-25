@@ -5,7 +5,7 @@
 using namespace std;
 
 #include "File.h"
-#include "Database.h"
+#include "DataBase.h"
 #include "Recruitment.h"
 
 #include "SignUp.h"
@@ -14,6 +14,8 @@ using namespace std;
 #include "LoginUI.h"
 #include "Logout.h"
 #include "LogoutUI.h"
+#include "Withdraw.h"
+#include "WithdrawUI.h"
 
 #include "CreateRecruitmentUI.h"
 #include "CreateRecruitment.h"
@@ -26,6 +28,7 @@ using namespace std;
 // 함수 선언
 void doTask();
 void join(DataBase* dataBase, File* file);
+void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
 void createRecruitment(DataBase* dataBase, File* file);
@@ -64,7 +67,8 @@ void doTask() {
 					}
 					case 2: // "1.2. 회원탈퇴" 메뉴 부분
 					{
-						break;
+                        withdraw(dataBase, file);
+                        break;
 					}
                     default:
                         break;
@@ -165,6 +169,13 @@ void join(DataBase* dataBase, File* file) {
     signUp->getSignUpUI()->addNewMember(signUp, file);
 }
 
+void withdraw(DataBase* dataBase, File* file) {
+
+    Withdraw* withdraw = new Withdraw(dataBase);
+    withdraw->GetWithdrawUI()->SelectWithdraw(withdraw, file);
+}
+
+
 // 2.1. 로그인
 void login(DataBase* dataBase, File* file) {
     Login* login = new Login(dataBase);
@@ -180,7 +191,7 @@ void logout(DataBase* dataBase, File* file) {
 // 3.1. 채용 정보 등록
 void createRecruitment(DataBase* dataBase, File* file){
     CreateRecruitment* createRecruitment = new CreateRecruitment(dataBase);
-    createRecruitment->GetCreateRecruitmentUI()->CreateNewRecruitment(createRecruitment, file);
+    createRecruitment->getCreateRecruitmentUI()->getRecruitmentForm(createRecruitment, file);
 }
 
 // 6.1. 종료
