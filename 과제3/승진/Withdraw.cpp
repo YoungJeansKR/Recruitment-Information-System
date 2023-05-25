@@ -1,6 +1,6 @@
 #include "Withdraw.h"
 #include "WithdrawUI.h"
-#include "Database.h"
+#include "DataBase.h"
 #include "Member.h"
 
 Withdraw::Withdraw()

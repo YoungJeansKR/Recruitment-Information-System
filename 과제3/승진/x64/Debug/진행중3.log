@@ -1,0 +1,27 @@
+﻿  CompanyMember.cpp
+  CreateRecruitment.cpp
+  CreateRecruitmentUI.cpp
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\CreateRecruitmentUI.cpp(19,35): warning C4244: '=': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  DataBase.cpp
+  File.cpp
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\File.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  ListMyRecruitment.cpp
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\ListMyRecruitment.cpp(24,17): error C2039: 'getRecruitmentList': 'Member'의 멤버가 아닙니다.
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\Member.h(8): message : 'Member' 선언을 참조하십시오.
+  ListMyRecruitmentUI.cpp
+  Login.cpp
+  LoginUI.cpp
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\LoginUI.cpp(21,32): warning C4244: '=': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Logout.cpp
+  LogoutUI.cpp
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\LogoutUI.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  Member.cpp
+  pasing.cpp
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\pasing.cpp(58,33): warning C4244: '=': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Recruitment.cpp
+  SignUp.cpp
+  SignUpUI.cpp
+C:\Users\BSJ\Documents\GitHub\software_engineering\과제3\승진\SignUpUI.cpp(29,32): warning C4244: '=': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Withdraw.cpp
+  WithdrawUI.cpp
+  코드를 생성하고 있습니다...

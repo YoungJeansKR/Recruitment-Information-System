@@ -1,16 +1,16 @@
 #pragma once
 #include "Member.h"
-#include <vector>
-
-class Apply;
+#include <string>
+using namespace std;
 
 class GeneralMember : public Member
 {
 public:
-	GeneralMember(std::string name, std::string residentId, std::string id, std::string password);
-
+	GeneralMember()
+		: Member()
+	{ }
+	GeneralMember(int user_type, string name, string residentId, string id, string password)
+		: Member(user_type, name, residentId, id, password)
+	{ }
 private:
-	std::string name;
-	std::string residentId;
-	std::vector<Apply*> applyList;
 };

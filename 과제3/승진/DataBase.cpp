@@ -4,8 +4,16 @@
 #include "GeneralMember.h"
 
 DataBase::DataBase()
-	: logInIndex(-1)
 {
-	companyMemberList.clear();
-	generalMemberList.clear();
+	memberList.clear();
+}
+
+void DataBase::addNewCompanyMember(Member* companymember)
+{
+	memberList.push_back(companymember);
+}
+
+void DataBase::addNewGeneralMember(Member* generalmember)
+{
+	memberList.push_back(generalmember);
 }

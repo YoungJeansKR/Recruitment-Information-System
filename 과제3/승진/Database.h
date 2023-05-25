@@ -1,21 +1,31 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include <vector>
-
-class Member;
-class GeneralMember;
-class CompanyMember;
+#include "Member.h"
+#include "CompanyMember.h"
+#include "GeneralMember.h"
+using namespace std;
 
 class DataBase
 {
 public:
 	DataBase();
 
-	std::vector<Member*> GetMemberList() { return memberList; }
-	std::vector<GeneralMember*> GetGeneralMemberList() { return generalMemberList; }
-	std::vector<CompanyMember*> GetCompanyMemberList() { return companyMemberList; }
+	vector<Member*> getMemberList() { return memberList; }
+    std::vector<CompanyMember*> getCompanyMemberList() { return companyMemberList; }
+    std::vector<GeneralMember*> getGeneralMemberList() { return generalMemberList; }
 
+    void addNewCompanyMember(Member* companyMember);
+	void addNewGeneralMember(Member* generalMember);
+
+    void deleteMember(int index) { memberList.erase(memberList.begin()+index); }
+    //void listRecruitment(Recruitment(int i) { (loginIndex = i); };
+	void setLoginIndex(int i) { loginIndex = i; }
+	int getLoginIndex() { return loginIndex; }
 private:
-	std::vector<Member*> memberList;
-	std::vector<GeneralMember*> generalMemberList;
-	std::vector<CompanyMember*> companyMemberList;
+	vector<Member*> memberList;
+    std::vector<CompanyMember*> companyMemberList;
+    std::vector<GeneralMember*> generalMemberList;
+    int loginIndex;
 };

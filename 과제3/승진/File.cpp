@@ -3,7 +3,7 @@
 
 File::File()
 {
-	// ÆÄÀÏ ÀÔÃâ·ÂÀ» À§ÇÑ ÃÊ±âÈ­
+	// íŒŒì¼ ì…ì¶œë ¥ì„ ìœ„í•œ ì´ˆê¸°í™”
 	ifs.open("input.txt", std::ios::in);
 	if (ifs.fail())
 	{

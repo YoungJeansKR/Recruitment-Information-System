@@ -1,6 +1,9 @@
 #pragma once
 #include "Member.h"
-#include<vector>
+#include <vector>
+#include <string>
+
+using namespace std;
 
 class Recruitment;
 
@@ -8,10 +11,13 @@ class CompanyMember : public Member
 {
 public:
 	CompanyMember();
-	CompanyMember(std::string companyName, std::string businessId, std::string id, std::string password);
 
+	CompanyMember(int user_type, string name, string businessId, string id, string password)
+		: Member(user_type, name, businessId, id, password)
+	{ }
+
+    void createNewRecruitment(Recruitment* newRecruitment);
+    std::vector<Recruitment*> getRecruitmentList() { return recruitmentList; }
 private:
-	std::string companyName;
-	std::string businessId;
-	std::vector<Recruitment*> recruitmentList;
+    std::vector<Recruitment*> recruitmentList;
 };
