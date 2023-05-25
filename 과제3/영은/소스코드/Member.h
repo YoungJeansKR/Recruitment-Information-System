@@ -12,6 +12,7 @@ public:
 	Member(int user_type, string name, string ssn, string id, string password);
 
 	string getId() { return id; }
+    string getName() { return name; }
 	string getPassword() { return password; }
     string getSSN() { return ssn; }
 	int getUserType() { return user_type; }
