@@ -4,15 +4,19 @@
 #include "File.h"
 using namespace std;
 
-LoginUI::LoginUI() {}
+LoginUI::LoginUI()
+{
+
+}
 
 void LoginUI::startInterface()
 {
-	// GUI°æ¿ì PopUpÃ¢ »ý¼º, ÀÌ¹ø °úÁ¦¿¡¼­´Â ÆÄÀÏ ÀÔÃâ·ÂÀÌ±â ¶§¹®¿¡ ¾Æ¹«·± ±â´ÉÀ» ÇÏÁö ¾ÊÀ½.
+	// GUIï¿½ï¿½ï¿½ PopUpÃ¢ ï¿½ï¿½ï¿½ï¿½, ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 }
 
 void LoginUI::login(Login* logIn, File* file)
 {
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ±ï¿½
 	string id = "";
 	string password = "";
 
@@ -22,6 +26,8 @@ void LoginUI::login(Login* logIn, File* file)
 
 	logIn->login(id, password);
 
-	file->ofs << "2.1. ·Î±×ÀÎ" << '\n';
+	cout << "2.1. ë¡œê·¸ì¸" << endl;
+	cout << "> " << id << " " << password << endl << endl;
+	file->ofs << "2.1. ë¡œê·¸ì¸" << '\n';
 	file->ofs << "> " << id << " " << password << " " << '\n' << '\n';
 }

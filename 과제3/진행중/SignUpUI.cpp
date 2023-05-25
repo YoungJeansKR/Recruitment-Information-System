@@ -11,13 +11,12 @@ SignUpUI::SignUpUI()
 
 void SignUpUI::startInterface()
 {
-	// GUI°æ¿ì PopUpÃ¢ »ý¼º, ÀÌ¹ø °úÁ¦¿¡¼­´Â ÆÄÀÏ ÀÔÃâ·ÂÀÌ±â ¶§¹®¿¡ ¾Æ¹«·± ±â´ÉÀ» ÇÏÁö ¾ÊÀ½.
-
+	// GUIï¿½ï¿½ï¿½ PopUpÃ¢ ï¿½ï¿½ï¿½ï¿½, ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 }
 
 void SignUpUI::addNewMember(SignUp* signUp, File* file)
 {
-	// ÆÄÀÏ ÀÔ·Â ¹Þ±â
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ±ï¿½
 	int user_type = 0;
 	string name = "";
 	string ssn = "";
@@ -30,8 +29,8 @@ void SignUpUI::addNewMember(SignUp* signUp, File* file)
 
 	signUp->addNewMember(user_type, name, ssn, id, password);
 
-	cout << "1.1. È¸¿ø°¡ÀÔ" << endl;
+	cout << "1.1. íšŒì›ê°€ìž…" << endl;
 	cout << "> " << user_type << " " << name << " " << ssn << " " << id << " " << password << " " << endl << endl;
-	file->ofs << "1.1. È¸¿ø°¡ÀÔ" << '\n';
+	file->ofs << "1.1. íšŒì›ê°€ìž…" << '\n';
 	file->ofs << "> " << user_type << " " << name << " " << ssn << " " << id << " " << password << " " << '\n' << '\n';
 }

@@ -1,19 +1,20 @@
 #pragma once
 #include <iostream>
 
-class DataBase;
+class Database;
 class CreateRecruitmentUI;
 
-class CreateRecruitment {
+class CreateRecruitment
+{
 public:
-    CreateRecruitment();
-    CreateRecruitment(DataBase* dataBase);
+	CreateRecruitment();
+	CreateRecruitment(DataBase* database);
 
-    CreateRecruitmentUI* GetCreateRecruitmentUI() { return createRecruitmentUI; }
+	CreateRecruitmentUI* GetCreateRecruitmentUI() { return createRecruitmentUI; }
 
-    void AddNewRecruitment(std::string task, std::string capacity, std::string deadline);
+	void addNewRecruitment(std::string task, std::string capacity, std::string deadline);
 
 private:
-    DataBase* dataBase;
-    CreateRecruitmentUI* createRecruitmentUI;
+	DataBase* database;
+	CreateRecruitmentUI* createRecruitmentUI;
 };
