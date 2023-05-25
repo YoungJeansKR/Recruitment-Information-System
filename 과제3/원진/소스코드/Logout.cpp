@@ -5,6 +5,7 @@
 #include "CompanyMember.h"
 #include "GeneralMember.h"
 #include <vector>
+
 using namespace std;
 
 Logout::Logout() {

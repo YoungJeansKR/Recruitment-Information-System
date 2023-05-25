@@ -1,22 +1,25 @@
 1.1. 회원가입
 > 1 hankook 3456 hk pwd1 
 
-1.1. 회원가입
-> 2 hong 98765 hn pwd2 
-
 2.1. 로그인
 > hk pwd1 
 
 3.1. 채용 정보 등록
-> task 5 2020
+> accounting 2 2023/05/26
 
-2.2. 로그아웃
-> hk
+3.2. 등록된 채용 정보 조회
+> accounting 2 2023/05/26 
+
+1.1. 회원가입
+> 2 hong 9876 hn pwd2 
 
 2.1. 로그인
 > hn pwd2 
 
-1.2. 회원탈퇴
-> hn 
+4.1. 채용 정보 검색
+> hankook 3456 accounting 2 2023/05/26
+
+4.2. 채용 지원
+> hankook 3456 accounting
 
 6.1 종료
