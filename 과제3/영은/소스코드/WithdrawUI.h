@@ -9,8 +9,8 @@ class WithdrawUI
 public:
 	WithdrawUI();
 
-	void StartInterface();
-	void SelectWithdraw(Withdraw* withdraw, File* file);
+	void startInterface();
+	void selectWithdraw(Withdraw* withdraw, File* file);
 private:
 	Withdraw* withdraw;
 };

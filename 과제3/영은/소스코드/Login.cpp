@@ -2,23 +2,43 @@
 #include "LoginUI.h"
 #include "DataBase.h"
 #include "Member.h"
-#include "CompanyMember.h"
-#include "GeneralMember.h"
 #include <vector>
 using namespace std;
 
-Login::Login() {
+/*
+ * 함수 이름 : Login
+ * 기능 : Login 생성자
+ * 전달 인자 : 없음
+ * 반환값 : 없음
+ */
+Login::Login()
+{
 	this->dataBase = nullptr;
 	loginUI = new LoginUI();
 	loginUI->startInterface();
 }
 
-Login::Login(DataBase* dataBase) {
+
+/*
+ * 함수 이름 : Login
+ * 기능 : Login 생성자
+ * 전달 인자 : DataBase*
+ * 반환값 : 없음
+ */
+Login::Login(DataBase* dataBase)
+{
 	this->dataBase = dataBase;
 	loginUI = new LoginUI();
 	loginUI->startInterface();
 }
 
+
+/*
+ * 함수 이름 : login
+ * 기능 : 로그인
+ * 전달 인자 : 아이디, 비밀번호
+ * 반환값 : 없음
+ */
 void Login::login(string id, string password)
 {
 	int i = 0;

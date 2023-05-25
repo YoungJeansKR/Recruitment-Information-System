@@ -1,6 +1,12 @@
 #include "File.h"
 #include <iostream>
 
+/*
+ * 함수 이름 : File
+ * 기능 : 파일 입출력을 위한 초기화
+ * 전달 인자 : 없음
+ * 반환값 : 없음
+ */
 File::File()
 {
 	// 파일 입출력을 위한 초기화

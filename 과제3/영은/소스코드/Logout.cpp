@@ -2,24 +2,44 @@
 #include "LogoutUI.h"
 #include "DataBase.h"
 #include "Member.h"
-#include "CompanyMember.h"
-#include "GeneralMember.h"
 #include <vector>
 
 using namespace std;
 
-Logout::Logout() {
+/*
+ * 함수 이름 : Logout
+ * 기능 : Logout 생성자
+ * 전달 인자 : 없음
+ * 반환값 : 없음
+ */
+Logout::Logout()
+{
 	this->dataBase = nullptr;
 	logoutUI = new LogoutUI();
 	logoutUI->startInterface();
 }
 
-Logout::Logout(DataBase* dataBase) {
+
+/*
+ * 함수 이름 : Logout
+ * 기능 : Logout 생성자
+ * 전달 인자 : DataBase*
+ * 반환값 : 없음
+ */
+Logout::Logout(DataBase* dataBase)
+{
 	this->dataBase = dataBase;
 	logoutUI = new LogoutUI();
 	logoutUI->startInterface();
 }
 
+
+/*
+ * 함수 이름 : logout
+ * 기능 : 로그아웃
+ * 전달 인자 : 없음
+ * 반환값 : 없음
+ */
 string Logout::logout()
 {
 	int loginIndex = this->dataBase->getLoginIndex();

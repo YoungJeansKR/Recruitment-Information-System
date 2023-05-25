@@ -5,20 +5,42 @@
 #include "Recruitment.h"
 #include "DataBase.h"
 
-ApplyRecruitment::ApplyRecruitment() {
+/*
+ * 함수 이름 : ApplyRecruitment
+ * 기능 : ApplyRecruitment 생성자
+ * 전달 인자 : 없음
+ * 반환값 : 없음
+ */
+ApplyRecruitment::ApplyRecruitment()
+{
     this->dataBase = nullptr;
     ApplyRecruitmentUI applyRecruitmentUI;
     applyRecruitmentUI.startInterface();
 }
 
-ApplyRecruitment::ApplyRecruitment(DataBase *dataBase) {
+
+/*
+ * 함수 이름 : ApplyRecruitment
+ * 기능 : ApplyRecruitment 생성자
+ * 전달 인자 : DataBase*
+ * 반환값 : 없음
+ */
+ApplyRecruitment::ApplyRecruitment(DataBase *dataBase)
+{
     this->dataBase = dataBase;
     ApplyRecruitmentUI applyRecruitmentUI;
     applyRecruitmentUI.startInterface();
 }
 
-Recruitment* ApplyRecruitment::sendApplyRequest(string companyMemberBuisnessId) {
 
+/*
+ * 함수 이름 : sendApplyRequest
+ * 기능 : 채용 지원
+ * 전달 인자 : 사업자번호
+ * 반환값 : 채용정보
+ */
+Recruitment* ApplyRecruitment::sendApplyRequest(string companyMemberBuisnessId)
+{
     int loginIndex = this->dataBase->getLoginIndex();
     Member* member = (this->dataBase)->getMemberList()[loginIndex];
     GeneralMember* generalMember = dynamic_cast<GeneralMember*>(member);

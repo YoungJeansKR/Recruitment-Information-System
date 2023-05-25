@@ -10,9 +10,9 @@ public:
 	Withdraw();
 	Withdraw(DataBase* dataBase);
 
-	WithdrawUI* GetWithdrawUI() { return withdrawUI; }
+	WithdrawUI* getWithdrawUI() { return withdrawUI; }
 
-	std::string TryWithdraw();
+	std::string tryWithdraw();
 
 private:
 	DataBase* dataBase;

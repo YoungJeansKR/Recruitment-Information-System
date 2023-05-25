@@ -28,6 +28,8 @@ using namespace std;
 #include "ApplyRecruitment.h"
 #include "ListMyApplyUI.h"
 #include "ListMyApply.h"
+#include "CancelApply.h"
+#include "CancelApplyUI.h"
 
 // 상수 선언
 #define MAX_STRING 32
@@ -45,6 +47,7 @@ void listMyRecruitment(DataBase* dataBase, File* file);
 void searchRecruitment(DataBase* dataBase, File* file);
 void apply(DataBase* dataBase, File* file);
 void listMyApply(DataBase* dataBase, File* file);
+void cancelApply(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -141,6 +144,7 @@ void doTask() {
 					}
 					case 4: // "4.4. 지원 취소" 메뉴 부분
 					{
+                        cancelApply(dataBase, file);
 						break;
 					}
                     default:
@@ -234,6 +238,13 @@ void apply(DataBase* dataBase, File* file) {
 void listMyApply(DataBase* dataBase, File* file) {
     ListMyApply* listMyApply = new ListMyApply(dataBase);
     listMyApply->getListMyApplyUI()->selectShowApplyList(listMyApply, file);
+}
+
+// 4.4. 지원 취소
+void cancelApply(DataBase* dataBase, File* file) {
+   CancelApply* cancelApply = new CancelApply(dataBase);
+   CancelApplyUI* cancelApplyUI = new CancelApplyUI();
+   cancelApplyUI->selectCancelApply(cancelApply, file);
 }
 
 // 6.1. 종료

@@ -6,19 +6,42 @@
 
 using namespace std;
 
-SearchRecruitment::SearchRecruitment() {
+/*
+ * 함수 이름 : SearchRecruitment
+ * 기능 : SearchRecruitment 생성자
+ * 전달 인자 : 없음
+ * 반환값 : 없음
+ */
+SearchRecruitment::SearchRecruitment()
+{
+    this->dataBase = nullptr;
     SearchRecruitmentUI searchRecruitmentUI;
     searchRecruitmentUI.startInterface();
 }
 
-SearchRecruitment::SearchRecruitment(DataBase *dataBase) {
+
+/*
+ * 함수 이름 : SearchRecruitment
+ * 기능 : SearchRecruitment 생성자
+ * 전달 인자 : DataBase*
+ * 반환값 : 없음
+ */
+SearchRecruitment::SearchRecruitment(DataBase *dataBase)
+{
     this->dataBase = dataBase;
     SearchRecruitmentUI searchRecruitmentUI;
     searchRecruitmentUI.startInterface();
 }
 
-Recruitment* SearchRecruitment::showRecruitmentDetails(std::string companyMemberName) {
 
+/*
+ * 함수 이름 : showRecruitmentDetails
+ * 기능 : 채용 검색
+ * 전달 인자 : 회사회원 이름
+ * 반환값 : 없음
+ */
+Recruitment* SearchRecruitment::showRecruitmentDetails(std::string companyMemberName)
+{
     vector<Member*> memberList = (this->dataBase)->getMemberList();
     Member* foundMember = nullptr;
 
@@ -31,5 +54,4 @@ Recruitment* SearchRecruitment::showRecruitmentDetails(std::string companyMember
 
     vector<Recruitment*> recruitmentList = dynamic_cast<CompanyMember*>(foundMember)->getRecruitmentList();
     return recruitmentList[0];
-
 }

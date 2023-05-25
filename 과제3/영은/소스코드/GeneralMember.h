@@ -16,6 +16,7 @@ public:
 	{ }
 
     void createApply(Recruitment* recruitment);
+	void deleteApply(int index) { applyList.erase(applyList.begin() + index); }
     vector<Recruitment*> getApplyList() { return applyList; }
 private:
     vector<Recruitment*> applyList;

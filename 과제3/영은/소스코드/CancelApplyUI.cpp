@@ -1,5 +1,5 @@
-#include "ApplyRecruitmentUI.h"
-#include "ApplyRecruitment.h"
+#include "CancelApplyUI.h"
+#include "CancelApply.h"
 #include "Recruitment.h"
 #include "File.h"
 #include <iostream>
@@ -7,12 +7,12 @@
 using namespace std;
 
 /*
- * 함수 이름 : ApplyRecruitmentUI
- * 기능 : ApplyRecruitmentUI 생성자
+ * 함수 이름 : CancelApplyUI
+ * 기능 : CancelApplyUI 생성자
  * 전달 인자 : 없음
  * 반환값 : 없음
  */
-ApplyRecruitmentUI::ApplyRecruitmentUI() {}
+CancelApplyUI::CancelApplyUI() {}
 
 
 /*
@@ -21,16 +21,16 @@ ApplyRecruitmentUI::ApplyRecruitmentUI() {}
  * 전달 인자 : 없음
  * 반환값 : 없음
  */
-void ApplyRecruitmentUI::startInterface() {}
+void CancelApplyUI::startInterface() {}
 
 
 /*
- * 함수 이름 : selectApply
+ * 함수 이름 : selectCancelApply
  * 기능 : 결과 출력
- * 전달 인자 : ApplyRecruitment*, File*
+ * 전달 인자 : CancelApply*, File*
  * 반환값 : 없음
  */
-void ApplyRecruitmentUI::selectApply(ApplyRecruitment *applyRecruitment, File *file)
+void CancelApplyUI::selectCancelApply(CancelApply *cancelApply, File *file)
 {
     string companyMemberBusinessId;
 
@@ -38,10 +38,10 @@ void ApplyRecruitmentUI::selectApply(ApplyRecruitment *applyRecruitment, File *f
     file->ifs >> companyMemberBusinessId;
     file->readed = file->ifs.tellg();
 
-    Recruitment* recruitment = applyRecruitment->sendApplyRequest(companyMemberBusinessId);
+    Recruitment* recruitment = cancelApply->sendCancelApplyRequest(companyMemberBusinessId);
 
-    cout << "4.2. 채용 지원" << endl;
+    cout << "4.4. 지원 취소" << endl;
     cout << "> " << recruitment->getCompanyMemberName() << " " << recruitment->getBusinessID() << " " << recruitment->getTask() << endl << endl;
-    file->ofs << "4.2. 채용 지원" << '\n';
+    file->ofs << "4.4. 지원 취소" << '\n';
     file->ofs << "> " << recruitment->getCompanyMemberName() << " " << recruitment->getBusinessID() << " " << recruitment->getTask() << '\n' << '\n';
 }
