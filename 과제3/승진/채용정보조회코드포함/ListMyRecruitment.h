@@ -9,13 +9,13 @@ class ListMyRecruitment
 {
 public:
 	ListMyRecruitment();
-	ListMyRecruitment(DataBase* database);
+	ListMyRecruitment(DataBase* dataBase);
 
-	ListMyRecruitmentUI* GetListMyRecruitmentUI() { return listMyRecruitmentUI; }
+	ListMyRecruitmentUI* getListMyRecruitmentUI() { return listMyRecruitmentUI; }
 
-	std::vector<Recruitment*> ShowMyRecruitments();
+	std::vector<Recruitment*> showMyRecruitments();
 
 private:
-	DataBase* database;
+	DataBase* dataBase;
 	ListMyRecruitmentUI* listMyRecruitmentUI;
 };

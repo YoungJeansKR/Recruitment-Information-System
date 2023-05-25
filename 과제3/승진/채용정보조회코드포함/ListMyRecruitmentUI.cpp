@@ -16,15 +16,13 @@ void ListMyRecruitmentUI::startInterface()
 
 void ListMyRecruitmentUI::selectShowRecruitmentList(ListMyRecruitment* listMyRecruitment, File* file)
 {
-	std::vector<Recruitment*> data = listMyRecruitment->ShowMyRecruitments();
+	std::vector<Recruitment*> data = listMyRecruitment->showMyRecruitments();
 
 	file->ofs << "3.2. 등록된 채용 정보 조회" << '\n';
 	for (Recruitment* recruitment : data)
 	{
-		if (recruitment->getNum() > 0)
-		{
-			file->ofs << "> " << recruitment->getTask() << " " << recruitment->getCapacity() << " " << recruitment->getDeadline() <<" "<< '\n';
-		}
+		file->ofs << "> " << recruitment->getTask() << " " << recruitment->getCapacity() << " " << recruitment->getDeadline() <<" "<< '\n';
+
 	}
 	file->ofs << '\n';
 }

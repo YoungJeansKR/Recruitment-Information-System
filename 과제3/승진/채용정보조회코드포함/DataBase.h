@@ -20,7 +20,6 @@ public:
 	void addNewGeneralMember(Member* generalMember);
 
     void deleteMember(int index) { memberList.erase(memberList.begin()+index); }
-    //void listRecruitment(Recruitment(int i) { (loginIndex = i); };
 	void setLoginIndex(int i) { loginIndex = i; }
 	int getLoginIndex() { return loginIndex; }
 private:

@@ -34,6 +34,7 @@ void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
 void createRecruitment(DataBase* dataBase, File* file);
+void listMyRecruitment(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -103,7 +104,7 @@ void doTask() {
 			}
 			case 2: // "3.2. 등록된 채용 정보 조회" 메뉴 부분
 			{
-
+				listMyRecruitment(dataBase, file);
 				break;
 			}
 			default:
@@ -198,7 +199,10 @@ void createRecruitment(DataBase* dataBase, File* file) {
 }
 
 // 3.2. 등록된 채용 정보 조회
-//void showRecruitmentList(Database* dataBase, File* file)
+void listMyRecruitment(DataBase* dataBase, File* file) {
+	ListMyRecruitment* listMyRecruitment = new ListMyRecruitment(dataBase);
+	listMyRecruitment->getListMyRecruitmentUI()->selectShowRecruitmentList(listMyRecruitment, file);
+}
 	
 
 

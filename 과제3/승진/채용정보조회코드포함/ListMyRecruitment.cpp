@@ -6,21 +6,23 @@
 
 ListMyRecruitment::ListMyRecruitment()
 {
-	this->database = nullptr;
+	this->dataBase = nullptr;
 	ListMyRecruitmentUI* listMyRecruitmentUI = new ListMyRecruitmentUI();
 	listMyRecruitmentUI->startInterface();
 }
 
-ListMyRecruitment::ListMyRecruitment(DataBase* database)
+ListMyRecruitment::ListMyRecruitment(DataBase* dataBase)
 {
-	this->database = database;
+	this->dataBase = dataBase;
 	ListMyRecruitmentUI* listMyRecruitmentUI = new ListMyRecruitmentUI();
 	listMyRecruitmentUI->startInterface();
 }
 
-std::vector<Recruitment*> ListMyRecruitment::ShowMyRecruitments()
+std::vector<Recruitment*> ListMyRecruitment::showMyRecruitments()
 {
-	Member* member = database->getCompanyMemberList()[database->getLoginIndex()];
-	return member->getRecruitmentList();
+	int loginIndex = this->dataBase->getLoginIndex();
+	Member* member = (this->dataBase)->getMemberList()[loginIndex];
+	CompanyMember* companyMember = dynamic_cast<CompanyMember*>(member);
+	return companyMember->getRecruitmentList();
 }
 
