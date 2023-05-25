@@ -14,11 +14,15 @@ public:
 	string getId() { return id; }
 	string getPassword() { return password; }
 	int getUserType() { return user_type; }
+	string getSSN() {return ssn; }
+	virtual void casting() {
+		return;
+	}
 
 private:
-	int user_type;		// È¸¿øÀ¯Çü
-	string name;		// ÀÌ¸§
-	string ssn;			// »ç¾÷ÀÚ¹øÈ£, ÁÖ¹Î¹øÈ£
-	string id;			// ¾ÆÀÌµð
-	string password;	// ºñ¹Ð¹øÈ£
+	int user_type;		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	string name;		// ï¿½Ì¸ï¿½
+	string ssn;			// ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½È£, ï¿½Ö¹Î¹ï¿½È£
+	string id;			// ï¿½ï¿½ï¿½Ìµï¿½
+	string password;	// ï¿½ï¿½Ð¹ï¿½È£
 };
