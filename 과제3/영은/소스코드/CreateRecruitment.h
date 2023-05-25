@@ -9,9 +9,9 @@ public:
     CreateRecruitment();
     CreateRecruitment(DataBase* dataBase);
 
-    CreateRecruitmentUI* GetCreateRecruitmentUI() { return createRecruitmentUI; }
+    CreateRecruitmentUI* getCreateRecruitmentUI() { return createRecruitmentUI; }
 
-    void AddNewRecruitment(std::string task, std::string capacity, std::string deadline);
+    void addNewRecruitment(std::string task, std::string capacity, std::string deadline);
 
 private:
     DataBase* dataBase;

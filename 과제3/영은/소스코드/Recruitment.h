@@ -7,12 +7,18 @@ public:
 	Recruitment();
 	Recruitment(std::string task, std::string capacity, std::string deadline);
 
-    void SetCompanyMemberID(std::string companyMemberID) { this->companyMemberID = companyMemberID; }
-    void SetBusinessID(std::string businessID) { this->businessID = businessID; }
+    std::string getCompanyMemberName() { return companyMemberName; }
+    std::string getBusinessID() { return businessID; }
+    std::string getTask() { return task; }
+    std::string getCapacity() { return capacity; }
+    std::string getDeadline() { return deadline; }
+
+    void setCompanyMemberName(std::string companyMemberName) { this->companyMemberName = companyMemberName; }
+    void setBusinessID(std::string businessID) { this->businessID = businessID; }
 private:
 	std::string task;
 	std::string capacity;
 	std::string deadline;
-    std::string companyMemberID;
+    std::string companyMemberName;
     std::string businessID;
 };

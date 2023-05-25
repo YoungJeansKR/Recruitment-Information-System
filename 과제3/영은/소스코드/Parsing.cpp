@@ -5,7 +5,7 @@
 using namespace std;
 
 #include "File.h"
-#include "Database.h"
+#include "DataBase.h"
 #include "Recruitment.h"
 
 #include "SignUp.h"
@@ -14,9 +14,16 @@ using namespace std;
 #include "LoginUI.h"
 #include "Logout.h"
 #include "LogoutUI.h"
+#include "Withdraw.h"
+#include "WithdrawUI.h"
 
 #include "CreateRecruitmentUI.h"
 #include "CreateRecruitment.h"
+
+#include "SearchRecruitmentUI.h"
+#include "SearchRecruitment.h"
+#include "ApplyRecruitmentUI.h"
+#include "ApplyRecruitment.h"
 
 // 상수 선언
 #define MAX_STRING 32
@@ -26,9 +33,12 @@ using namespace std;
 // 함수 선언
 void doTask();
 void join(DataBase* dataBase, File* file);
+void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
 void createRecruitment(DataBase* dataBase, File* file);
+//void searchRecruitment(DataBase* dataBase, File* file);
+//void apply(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -41,6 +51,7 @@ void doTask() {
 
     File* file = new File();
     DataBase* dataBase = new DataBase();
+    Recruitment* curRecruitment = nullptr;
 
 	// 메뉴 파싱을 위한 level 구분을 위한 변수
 	int menu_level_1 = 0, menu_level_2 = 0;
@@ -64,7 +75,8 @@ void doTask() {
 					}
 					case 2: // "1.2. 회원탈퇴" 메뉴 부분
 					{
-						break;
+                        withdraw(dataBase, file);
+                        break;
 					}
                     default:
                         break;
@@ -108,11 +120,17 @@ void doTask() {
 				switch(menu_level_2) {
 					case 1: // "4.1. 채용 정보 검색“ 메뉴 부분
 					{
+                        SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
+                        SearchRecruitmentUI* searchRecruitmentUI = new SearchRecruitmentUI();
+                        curRecruitment = searchRecruitmentUI->searchRecruitment(searchRecruitment, file);
                         break;
 					}
 					case 2: // "4.2. 채용 지원" 메뉴 부분
 					{
-						break;
+                        ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
+                        ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
+                        applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
+                        break;
 					}
 					case 3: // "4.3. 지원 정보 조회" 메뉴 부분
 					{
@@ -165,6 +183,13 @@ void join(DataBase* dataBase, File* file) {
     signUp->getSignUpUI()->addNewMember(signUp, file);
 }
 
+// 1.2. 회원탈퇴
+void withdraw(DataBase* dataBase, File* file) {
+
+    Withdraw* withdraw = new Withdraw(dataBase);
+    withdraw->GetWithdrawUI()->SelectWithdraw(withdraw, file);
+}
+
 // 2.1. 로그인
 void login(DataBase* dataBase, File* file) {
     Login* login = new Login(dataBase);
@@ -180,8 +205,21 @@ void logout(DataBase* dataBase, File* file) {
 // 3.1. 채용 정보 등록
 void createRecruitment(DataBase* dataBase, File* file){
     CreateRecruitment* createRecruitment = new CreateRecruitment(dataBase);
-    createRecruitment->GetCreateRecruitmentUI()->GetRecruitmentForm(createRecruitment, file);
+    createRecruitment->getCreateRecruitmentUI()->getRecruitmentForm(createRecruitment, file);
 }
+
+// 4.1. 채용 정보 검색
+//void searchRecruitment(DataBase* dataBase, File* file) {
+//    SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
+//    SearchRecruitmentUI* searchRecruitmentUI = new SearchRecruitmentUI();
+//    curRecruitment = searchRecruitmentUI->searchRecruitment(searchRecruitment, file);
+//}
+// 4.2. 채용 지원
+//void apply(DataBase* dataBase, File* file) {
+//    ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
+//    ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
+//    applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
+//}
 
 // 6.1. 종료
 void program_exit(File* file) {
