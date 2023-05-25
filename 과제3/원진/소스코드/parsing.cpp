@@ -30,6 +30,10 @@ using namespace std;
 #include "ListMyApply.h"
 #include "CancelApply.h"
 #include "CancelApplyUI.h"
+#include "ShowApplyStats.h"
+#include "ShowApplyStatsUI.h"
+#include "ShowApplicantStats.h"
+#include "ShowApplicantStatsUI.h"
 
 // 상수 선언
 #define MAX_STRING 32
@@ -48,6 +52,7 @@ void searchRecruitment(DataBase* dataBase, File* file);
 void apply(DataBase* dataBase, File* file);
 void listMyApply(DataBase* dataBase, File* file);
 void cancelApply(DataBase* dataBase, File* file);
+void showStats(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -70,7 +75,6 @@ void doTask() {
 		// 입력파일에서 메뉴 숫자 2개를 읽기
         file->ifs >> menu_level_1 >> menu_level_2;
         file->readed = file->ifs.tellg();
-
 		// 메뉴 구분 및 해당 연산 수행
 		switch(menu_level_1)
 		{
@@ -156,6 +160,7 @@ void doTask() {
 				switch(menu_level_2) {
 					case 1: // "5.1. 지원 정보 통계“ 메뉴 부분
 					{
+                        showStats(dataBase, file);
 						break;
 					}
                     default:
@@ -212,7 +217,7 @@ void logout(DataBase* dataBase, File* file) {
 // 3.1. 채용 정보 등록
 void createRecruitment(DataBase* dataBase, File* file){
     CreateRecruitment* createRecruitment = new CreateRecruitment(dataBase);
-    createRecruitment->getCreateRecruitmentUI()->getRecruitmentForm(createRecruitment, file);
+    createRecruitment->getCreateRecruitmentUI()->addNewRecruitment(createRecruitment, file);
 }
 
 // 3.2. 등록된 채용 정보 조회
@@ -245,6 +250,30 @@ void cancelApply(DataBase* dataBase, File* file) {
    CancelApply* cancelApply = new CancelApply(dataBase);
    CancelApplyUI* cancelApplyUI = new CancelApplyUI();
    cancelApplyUI->selectCancelApply(cancelApply, file);
+}
+
+// 5.1 지원 정보 통계
+void showStats(DataBase* dataBase, File* file) {
+
+    int loginIndex = dataBase->getLoginIndex();
+    Member* member = (dataBase)->getMemberList()[loginIndex];
+
+    if (member->getUserType() == 1) {
+
+        CompanyMember* companyMember = dynamic_cast<CompanyMember*>(member);
+        ShowApplicantStats* showApplicantStats = new ShowApplicantStats(dataBase);
+        ShowApplicantStatsUI* showApplicantStatsUI = new ShowApplicantStatsUI();
+        showApplicantStatsUI->showApplicantStats(showApplicantStats, companyMember, file);
+
+    } else {
+
+        GeneralMember* generalMember = dynamic_cast<GeneralMember*>(member);
+        ShowApplyStats* showApplyStats = new ShowApplyStats(dataBase);
+        ShowApplyStatsUI* showApplyStatsUI = new ShowApplyStatsUI();
+        showApplyStatsUI->showApplyStats(showApplyStats, generalMember, file);
+
+    }
+    
 }
 
 // 6.1. 종료

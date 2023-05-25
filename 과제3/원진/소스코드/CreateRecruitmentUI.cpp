@@ -7,7 +7,7 @@ CreateRecruitmentUI::CreateRecruitmentUI() {}
 
 void CreateRecruitmentUI::startInterface() {}
 
-void CreateRecruitmentUI::getRecruitmentForm(CreateRecruitment *createRecruitment, File *file)
+void CreateRecruitmentUI::addNewRecruitment(CreateRecruitment *createRecruitment, File *file)
 {
     // 파일 입력 받기
     std::string task = "";
