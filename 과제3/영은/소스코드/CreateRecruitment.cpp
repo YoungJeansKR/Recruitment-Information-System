@@ -17,10 +17,14 @@ CreateRecruitment::CreateRecruitment(DataBase *dataBase) {
 }
 
 void CreateRecruitment::AddNewRecruitment(std::string task, std::string capacity, std::string deadline) {
-    CompanyMember* companyMember = dataBase->getCompanyMemberList()[dataBase->getLoginIndex()];
+    int loginIndex = this->dataBase->getLoginIndex();
+    Member* member = (this->dataBase)->getMemberList()[loginIndex];
+    CompanyMember* companyMember = dynamic_cast<CompanyMember*>(member);
+
     Recruitment* newRecruitment = new Recruitment(task, capacity, deadline);
     newRecruitment->SetCompanyMemberID(dataBase->getMemberList()[dataBase->getLoginIndex()]->getId());
-    companyMember->CreateRecruitment(newRecruitment);
+    newRecruitment->SetBusinessID(dataBase->getMemberList()[dataBase->getLoginIndex()]->getSSN());
+    companyMember->CreateNewRecruitment(newRecruitment);
 }
 
 

@@ -6,6 +6,6 @@ CompanyMember::CompanyMember()
     recruitmentList.clear();
 }
 
-void CompanyMember::AddNewRecruitment(Recruitment *newRecruitment) {
+void CompanyMember::CreateNewRecruitment(Recruitment *newRecruitment) {
     recruitmentList.push_back(newRecruitment);
 }
