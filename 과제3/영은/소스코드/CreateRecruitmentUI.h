@@ -9,5 +9,5 @@ public:
     CreateRecruitmentUI();
 
     void StartInterface();
-    void CreateNewRecruitment(CreateRecruitment* createRecruitment, File* file);
+    void GetRecruitmentForm(CreateRecruitment* createRecruitment, File* file);
 };

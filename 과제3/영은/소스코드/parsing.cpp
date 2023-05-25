@@ -180,7 +180,7 @@ void logout(DataBase* dataBase, File* file) {
 // 3.1. 채용 정보 등록
 void createRecruitment(DataBase* dataBase, File* file){
     CreateRecruitment* createRecruitment = new CreateRecruitment(dataBase);
-    createRecruitment->GetCreateRecruitmentUI()->CreateNewRecruitment(createRecruitment, file);
+    createRecruitment->GetCreateRecruitmentUI()->GetRecruitmentForm(createRecruitment, file);
 }
 
 // 6.1. 종료

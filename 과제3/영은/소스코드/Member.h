@@ -13,7 +13,9 @@ public:
 
 	string getId() { return id; }
 	string getPassword() { return password; }
+    string getSSN() { return ssn; }
 	int getUserType() { return user_type; }
+    virtual void casting() { return; }
 
 private:
 	int user_type;		// 회원유형
