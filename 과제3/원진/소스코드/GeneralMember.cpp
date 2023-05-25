@@ -2,9 +2,9 @@
 #include "Recruitment.h"
 
 GeneralMember::GeneralMember() {
-    recruitmentList.clear();
+    applyList.clear();
 }
 
 void GeneralMember::createApply(Recruitment* newRecruitment) {
-    recruitmentList.push_back(newRecruitment);
+    applyList.push_back(newRecruitment);
 }
