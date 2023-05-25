@@ -15,11 +15,9 @@ public:
 	CompanyMember(int user_type, string name, string businessId, string id, string password)
 		: Member(user_type, name, businessId, id, password)
 	{ }
-	string getBusinessId() { return getSSN(); }
 
-    void CreateRecruitment(Recruitment* newRecruitment);
-    std::vector<Recruitment*> GetRecruitmentList() { return recruitmentList; }
+    void createNewRecruitment(Recruitment* newRecruitment);
+    std::vector<Recruitment*> getRecruitmentList() { return recruitmentList; }
 private:
     std::vector<Recruitment*> recruitmentList;
 };
-

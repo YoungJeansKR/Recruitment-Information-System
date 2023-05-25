@@ -13,16 +13,19 @@ public:
 	DataBase();
 
 	vector<Member*> getMemberList() { return memberList; }
-	
+    std::vector<CompanyMember*> getCompanyMemberList() { return companyMemberList; }
+    std::vector<GeneralMember*> getGeneralMemberList() { return generalMemberList; }
 
-	void addNewCompanyMember(Member* companymember);
-	void addNewGeneralMember(Member* generalmember);
-	
-	void deleteMember(int index) { memberList.erase(memberList.begin() + index); }
+    void addNewCompanyMember(Member* companyMember);
+	void addNewGeneralMember(Member* generalMember);
+
+    void deleteMember(int index) { memberList.erase(memberList.begin()+index); }
 
 	void setLoginIndex(int i) { loginIndex = i; }
 	int getLoginIndex() { return loginIndex; }
 private:
 	vector<Member*> memberList;
-	int loginIndex;
+    std::vector<CompanyMember*> companyMemberList;
+    std::vector<GeneralMember*> generalMemberList;
+    int loginIndex;
 };

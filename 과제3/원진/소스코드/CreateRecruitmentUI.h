@@ -8,6 +8,6 @@ class CreateRecruitmentUI
 public:
     CreateRecruitmentUI();
 
-    void StartInterface();
-    void CreateNewRecruitment(CreateRecruitment* createRecruitment, File* file);
+    void startInterface();
+    void getRecruitmentForm(CreateRecruitment* createRecruitment, File* file);
 };
