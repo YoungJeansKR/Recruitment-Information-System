@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-#include "Database.h"
+#include "DataBase.h"
 #include "File.h"
 
 #include "SignUp.h"
@@ -13,6 +13,11 @@ using namespace std;
 #include "LoginUI.h"
 #include "Logout.h"
 #include "LogoutUI.h"
+#include "Withdraw.h"
+#include "WithdrawUI.h"
+
+#include "CreateRecruitmentUI.h"
+#include "CreateRecruitment.h"
 
 // ��� ����
 #define MAX_STRING 32
@@ -22,8 +27,10 @@ using namespace std;
 // �Լ� ����
 void doTask();
 void join(DataBase* dataBase, File* file);
+void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
+void createRecruitment(DataBase* dataBase, File* file);
 void searchRecruitment(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
@@ -62,6 +69,7 @@ void doTask() {
 			}
 			case 2: // "1.2. ȸ��Ż��" �޴� �κ� 
 			{
+				withdraw(dataBase, file);
 				break;
 			}
 			default:
@@ -90,6 +98,7 @@ void doTask() {
 			switch (menu_level_2) {
 			case 1: // "3.1. ä�� ���� ��ϡ� �޴� �κ� 
 			{
+				createRecruitment(dataBase, file);
 				break;
 			}
 			case 2: // "3.2. ��ϵ� ä�� ���� ��ȸ" �޴� �κ� 
@@ -165,6 +174,12 @@ void join(DataBase* dataBase, File* file) {
 	signUp->getSignUpUI()->addNewMember(signUp, file);
 }
 
+void withdraw(DataBase* dataBase, File* file) {
+
+	Withdraw* withdraw = new Withdraw(dataBase);
+	withdraw->GetWithdrawUI()->SelectWithdraw(withdraw, file);
+}
+
 
 // "2.1. �α��Ρ� �޴� �κ� 
 void login(DataBase* dataBase, File* file) {
@@ -177,10 +192,16 @@ void logout(DataBase* dataBase, File* file) {
 	logout->getLogoutUI()->logout(logout, file);
 }
 
+// 3.1. 채용 정보 등록
+void createRecruitment(DataBase* dataBase, File* file){
+    CreateRecruitment* createRecruitment = new CreateRecruitment(dataBase);
+    createRecruitment->GetCreateRecruitmentUI()->CreateNewRecruitment(createRecruitment, file);
+}
 
 // "4.1. ä�� ���� �˻��� �޴� �κ�
 void searchRecruitment(DataBase* dataBase, File* file) {
 }
+
 
 
 // "6.1. ���ᡰ �޴� �κ�
