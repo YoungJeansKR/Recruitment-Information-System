@@ -140,7 +140,7 @@ void doTask() {
 
             case 6: {
                 switch (menu_level_2) {
-                    case 1: // "6.1. ���ᡰ �޴� �κ�
+                    case 1: // "6.1. 종료" 메뉴 부분
                     {
                         program_exit(file);
                         is_program_exit = 1;
@@ -181,4 +181,12 @@ void logout(DataBase* dataBase, File* file) {
 void createRecruitment(DataBase* dataBase, File* file){
     CreateRecruitment* createRecruitment = new CreateRecruitment(dataBase);
     createRecruitment->GetCreateRecruitmentUI()->CreateNewRecruitment(createRecruitment, file);
+}
+
+// 6.1. 종료
+void program_exit(File* file) {
+    cout << "6.1 종료";
+    file->ofs << "6.1 종료";
+    file->ifs.close();
+    file->ofs.close();
 }

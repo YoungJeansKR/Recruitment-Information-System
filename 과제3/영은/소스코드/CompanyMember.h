@@ -16,7 +16,7 @@ public:
 		: Member(user_type, name, businessId, id, password)
 	{ }
 
-    void CreateRecruitment(Recruitment* newRecruitment);
+    void AddNewRecruitment(Recruitment* newRecruitment);
     std::vector<Recruitment*> GetRecruitmentList() { return recruitmentList; }
 private:
     std::vector<Recruitment*> recruitmentList;

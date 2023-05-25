@@ -9,7 +9,7 @@ void CreateRecruitmentUI::StartInterface() {}
 
 void CreateRecruitmentUI::CreateNewRecruitment(CreateRecruitment *createRecruitment, File *file)
 {
-    // 파일 입력
+    // 파일 입력 받기
     std::string task = "";
     std::string capacity = "";
     std::string deadline = "";
@@ -21,7 +21,7 @@ void CreateRecruitmentUI::CreateNewRecruitment(CreateRecruitment *createRecruitm
     createRecruitment->AddNewRecruitment(task, capacity, deadline);
 
     cout << "3.1. 채용 정보 등록" << endl;
-    cout << "> " << task << " " << capacity << " " << deadline << '\n' << '\n';
+    cout << "> " << task << " " << capacity << " " << deadline << endl << endl;
     file->ofs << "3.1. 채용 정보 등록" << '\n';
     file->ofs << "> " << task << " " << capacity << " " << deadline << '\n' << '\n';
 
