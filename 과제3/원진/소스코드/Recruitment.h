@@ -1,24 +1,29 @@
 #pragma once
 #include <iostream>
 
+using namespace std;
+
 class Recruitment
 {
 public:
 	Recruitment();
 	Recruitment(std::string task, std::string capacity, std::string deadline);
 
-    std::string getCompanyMemberName() { return companyMemberName; }
-    std::string getBusinessID() { return businessID; }
-    std::string getTask() { return task; }
-    std::string getCapacity() { return capacity; }
-    std::string getDeadline() { return deadline; }
+    string getCompanyMemberName() { return companyMemberName; }
+    string getBusinessID() { return businessID; }
+    string getTask() { return task; }
+    string getCapacity() { return capacity; }
+    string getDeadline() { return deadline; }
+    int getApplicantCount() { return applicantCount; }
 
-    void setCompanyMemberName(std::string companyMemberName) { this->companyMemberName = companyMemberName; }
-    void setBusinessID(std::string businessID) { this->businessID = businessID; }
+    void setApplicantCount(int count) { this->applicantCount = count; }
+    void setCompanyMemberName(string companyMemberName) { this->companyMemberName = companyMemberName; }
+    void setBusinessID(string businessID) { this->businessID = businessID; }
 private:
-	std::string task;
-	std::string capacity;
-	std::string deadline;
-    std::string companyMemberName;
-    std::string businessID;
+	string task;
+	string capacity;
+	string deadline;
+    string companyMemberName;
+    string businessID;
+    int applicantCount;
 };
