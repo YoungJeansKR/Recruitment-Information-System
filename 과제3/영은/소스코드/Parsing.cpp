@@ -20,6 +20,8 @@ using namespace std;
 #include "CreateRecruitmentUI.h"
 #include "CreateRecruitment.h"
 
+#include "SearchRecruitmentUI.h"
+#include "SearchRecruitment.h"
 #include "ApplyRecruitmentUI.h"
 #include "ApplyRecruitment.h"
 
@@ -35,7 +37,8 @@ void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
 void createRecruitment(DataBase* dataBase, File* file);
-void apply(DataBase* dataBase, File* file);
+//void searchRecruitment(DataBase* dataBase, File* file);
+//void apply(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -117,11 +120,16 @@ void doTask() {
 				switch(menu_level_2) {
 					case 1: // "4.1. 채용 정보 검색“ 메뉴 부분
 					{
+                        SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
+                        SearchRecruitmentUI* searchRecruitmentUI = new SearchRecruitmentUI();
+                        curRecruitment = searchRecruitmentUI->searchRecruitment(searchRecruitment, file);
                         break;
 					}
 					case 2: // "4.2. 채용 지원" 메뉴 부분
 					{
-                        apply(dataBase, file);
+                        ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
+                        ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
+                        applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
                         break;
 					}
 					case 3: // "4.3. 지원 정보 조회" 메뉴 부분
@@ -175,12 +183,12 @@ void join(DataBase* dataBase, File* file) {
     signUp->getSignUpUI()->addNewMember(signUp, file);
 }
 
+// 1.2. 회원탈퇴
 void withdraw(DataBase* dataBase, File* file) {
 
     Withdraw* withdraw = new Withdraw(dataBase);
     withdraw->GetWithdrawUI()->SelectWithdraw(withdraw, file);
 }
-
 
 // 2.1. 로그인
 void login(DataBase* dataBase, File* file) {
@@ -200,11 +208,18 @@ void createRecruitment(DataBase* dataBase, File* file){
     createRecruitment->getCreateRecruitmentUI()->getRecruitmentForm(createRecruitment, file);
 }
 
-void apply(DataBase* dataBase, File* file) {
-    ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
-    ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
-    applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
-}
+// 4.1. 채용 정보 검색
+//void searchRecruitment(DataBase* dataBase, File* file) {
+//    SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
+//    SearchRecruitmentUI* searchRecruitmentUI = new SearchRecruitmentUI();
+//    curRecruitment = searchRecruitmentUI->searchRecruitment(searchRecruitment, file);
+//}
+// 4.2. 채용 지원
+//void apply(DataBase* dataBase, File* file) {
+//    ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
+//    ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
+//    applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
+//}
 
 // 6.1. 종료
 void program_exit(File* file) {

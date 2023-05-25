@@ -6,8 +6,9 @@
 
 using namespace std;
 
-
 ApplyRecruitmentUI::ApplyRecruitmentUI() {}
+
+void ApplyRecruitmentUI::startInterface() {}
 
 void ApplyRecruitmentUI::selectApply(ApplyRecruitment *applyRecruitment, Recruitment *curRecruitment, File *file) {
     applyRecruitment->SendApplyRequest(curRecruitment);
