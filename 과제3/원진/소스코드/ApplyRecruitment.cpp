@@ -37,6 +37,7 @@ Recruitment* ApplyRecruitment::sendApplyRequest(string companyMemberBuisnessId) 
     Recruitment* recruitment = recruitmentList[0];
 
     generalMember->createApply(recruitment);
+    recruitment->setApplicantCount(recruitment->getApplicantCount() + 1);
 
     return recruitment;
 }
