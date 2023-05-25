@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+using namespace std;
+
 class DataBase;
 class Recruitment;
 
@@ -11,5 +13,5 @@ public:
     ApplyRecruitment();
     ApplyRecruitment(DataBase* dataBase);
 
-    void SendApplyRequest(Recruitment* curRecruitment);
+    Recruitment* sendApplyRequest(string companyMemberBusinessId);
 };
