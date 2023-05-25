@@ -11131,7 +11131,7 @@
 											"top": 876,
 											"width": 230,
 											"height": 13,
-											"text": "Control::CancelApplyUI"
+											"text": "Control::CancelApply"
 										},
 										{
 											"_type": "LabelView",
@@ -11254,7 +11254,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"top": -128,
+									"top": -136,
 									"width": 10,
 									"height": 10
 								},
@@ -11269,7 +11269,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"top": -128,
+									"top": -136,
 									"width": 10,
 									"height": 10
 								}
@@ -12655,7 +12655,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGIBy2jCJ4Eow0="
 					},
-					"name": "Control::CancelApplyUI",
+					"name": "Control::CancelApply",
 					"stereotype": "control",
 					"operations": [
 						{
