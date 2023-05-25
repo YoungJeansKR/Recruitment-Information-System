@@ -22,4 +22,7 @@
 4.2. 채용 지원
 > hankook 3456 accounting
 
+4.4. 지원 취소
+> hankook 3456 accounting
+
 6.1 종료
