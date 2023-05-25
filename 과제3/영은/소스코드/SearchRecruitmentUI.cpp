@@ -9,7 +9,7 @@ SearchRecruitmentUI::SearchRecruitmentUI() {}
 
 void SearchRecruitmentUI::startInterface() {}
 
-Recruitment* SearchRecruitmentUI::searchRecruitment(SearchRecruitment *searchRecruitment, File *file) {
+void SearchRecruitmentUI::searchRecruitment(SearchRecruitment *searchRecruitment, File *file) {
 
     std::string companyMemberName;
 
@@ -24,5 +24,4 @@ Recruitment* SearchRecruitmentUI::searchRecruitment(SearchRecruitment *searchRec
     file->ofs << "4.1. 채용 정보 검색" << '\n';
     file->ofs << "> " << recruitment->getCompanyMemberName() << " " << recruitment->getBusinessID() << " " << recruitment->getTask() << " " << recruitment->getCapacity() << " " <<  recruitment->getDeadline() << '\n' << '\n';
 
-    return recruitment;
 }

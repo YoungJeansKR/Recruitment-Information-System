@@ -37,8 +37,8 @@ void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
 void createRecruitment(DataBase* dataBase, File* file);
-//void searchRecruitment(DataBase* dataBase, File* file);
-//void apply(DataBase* dataBase, File* file);
+void searchRecruitment(DataBase* dataBase, File* file);
+void apply(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -51,7 +51,6 @@ void doTask() {
 
     File* file = new File();
     DataBase* dataBase = new DataBase();
-    Recruitment* curRecruitment = nullptr;
 
 	// 메뉴 파싱을 위한 level 구분을 위한 변수
 	int menu_level_1 = 0, menu_level_2 = 0;
@@ -120,16 +119,12 @@ void doTask() {
 				switch(menu_level_2) {
 					case 1: // "4.1. 채용 정보 검색“ 메뉴 부분
 					{
-                        SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
-                        SearchRecruitmentUI* searchRecruitmentUI = new SearchRecruitmentUI();
-                        curRecruitment = searchRecruitmentUI->searchRecruitment(searchRecruitment, file);
+                        searchRecruitment(dataBase, file);
                         break;
 					}
 					case 2: // "4.2. 채용 지원" 메뉴 부분
 					{
-                        ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
-                        ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
-                        applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
+						apply(dataBase, file);
                         break;
 					}
 					case 3: // "4.3. 지원 정보 조회" 메뉴 부분
@@ -209,17 +204,17 @@ void createRecruitment(DataBase* dataBase, File* file){
 }
 
 // 4.1. 채용 정보 검색
-//void searchRecruitment(DataBase* dataBase, File* file) {
-//    SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
-//    SearchRecruitmentUI* searchRecruitmentUI = new SearchRecruitmentUI();
-//    curRecruitment = searchRecruitmentUI->searchRecruitment(searchRecruitment, file);
-//}
+void searchRecruitment(DataBase* dataBase, File* file) {
+   SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
+   SearchRecruitmentUI* searchRecruitmentUI = new SearchRecruitmentUI();
+   searchRecruitmentUI->searchRecruitment(searchRecruitment, file);
+}
 // 4.2. 채용 지원
-//void apply(DataBase* dataBase, File* file) {
-//    ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
-//    ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
-//    applyRecruitmentUI->selectApply(applyRecruitment, curRecruitment, file);
-//}
+void apply(DataBase* dataBase, File* file) {
+   ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
+   ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
+   applyRecruitmentUI->selectApply(applyRecruitment, file);
+}
 
 // 6.1. 종료
 void program_exit(File* file) {

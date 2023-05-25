@@ -10,5 +10,5 @@ public:
     SearchRecruitmentUI();
 
     void startInterface();
-    Recruitment* searchRecruitment(SearchRecruitment* searchRecruitment, File* file);
+    void searchRecruitment(SearchRecruitment* searchRecruitment, File* file);
 };

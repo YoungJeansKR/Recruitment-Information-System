@@ -10,5 +10,5 @@ public:
     ApplyRecruitmentUI();
 
     void startInterface();
-    void selectApply(ApplyRecruitment* applyRecruitment, Recruitment* curRecruitment, File* file);
+    void selectApply(ApplyRecruitment* applyRecruitment, File* file);
 };
