@@ -16,9 +16,9 @@ public:
 	int getUserType() { return user_type; }
 
 private:
-	int user_type;		// íšŒì›ìœ í˜•
-	string name;		// ì´ë¦„
-	string ssn;			// ì‚¬ì—…ìë²ˆí˜¸, ì£¼ë¯¼ë²ˆí˜¸
-	string id;			// ì•„ì´ë””
-	string password;	// ë¹„ë°€ë²ˆí˜¸
+	int user_type;		// È¸¿øÀ¯Çü
+	string name;		// ÀÌ¸§
+	string ssn;			// »ç¾÷ÀÚ¹øÈ£, ÁÖ¹Î¹øÈ£
+	string id;			// ¾ÆÀÌµğ
+	string password;	// ºñ¹Ğ¹øÈ£
 };

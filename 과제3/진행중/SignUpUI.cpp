@@ -1,27 +1,36 @@
-#include "LoginUI.h"
-#include "Login.h"
+#include "SignUpUI.h"
+#include "SignUp.h"
 #include "Member.h"
 #include "File.h"
 using namespace std;
 
-LoginUI::LoginUI() {}
-
-void LoginUI::startInterface()
+SignUpUI::SignUpUI()
 {
-	// GUI°æ¿ì PopUpÃ¢ »ý¼º, ÀÌ¹ø °úÁ¦¿¡¼­´Â ÆÄÀÏ ÀÔÃâ·ÂÀÌ±â ¶§¹®¿¡ ¾Æ¹«·± ±â´ÉÀ» ÇÏÁö ¾ÊÀ½.
+
 }
 
-void LoginUI::login(Login* logIn, File* file)
+void SignUpUI::startInterface()
 {
+	// GUIï¿½ï¿½ï¿½ PopUpÃ¢ ï¿½ï¿½ï¿½ï¿½, ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+}
+
+void SignUpUI::addNewMember(SignUp* signUp, File* file)
+{
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ±ï¿½
+	int user_type = 0;
+	string name = "";
+	string ssn = "";
 	string id = "";
 	string password = "";
 
 	file->ifs.seekg(file->readed);
-	file->ifs >> id >> password;
+	file->ifs >> user_type >> name >> ssn >> id >> password;
 	file->readed = file->ifs.tellg();
 
-	logIn->login(id, password);
+	signUp->addNewMember(user_type, name, ssn, id, password);
 
-	file->ofs << "2.1. ·Î±×ÀÎ" << '\n';
-	file->ofs << "> " << id << " " << password << " " << '\n' << '\n';
+	cout << "1.1. íšŒì›ê°€ìž…" << endl;
+	cout << "> " << user_type << " " << name << " " << ssn << " " << id << " " << password << " " << endl << endl;
+	file->ofs << "1.1. íšŒì›ê°€ìž…" << '\n';
+	file->ofs << "> " << user_type << " " << name << " " << ssn << " " << id << " " << password << " " << '\n' << '\n';
 }
