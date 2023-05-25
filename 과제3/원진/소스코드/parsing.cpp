@@ -26,6 +26,8 @@ using namespace std;
 #include "SearchRecruitment.h"
 #include "ApplyRecruitmentUI.h"
 #include "ApplyRecruitment.h"
+#include "ListMyApplyUI.h"
+#include "ListMyApply.h"
 #include "CancelApply.h"
 #include "CancelApplyUI.h"
 
@@ -44,6 +46,7 @@ void createRecruitment(DataBase* dataBase, File* file);
 void listMyRecruitment(DataBase* dataBase, File* file);
 void searchRecruitment(DataBase* dataBase, File* file);
 void apply(DataBase* dataBase, File* file);
+void listMyApply(DataBase* dataBase, File* file);
 void cancelApply(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
@@ -136,6 +139,7 @@ void doTask() {
 					}
 					case 3: // "4.3. 지원 정보 조회" 메뉴 부분
 					{
+                        listMyApply(dataBase, file);
                         break;
 					}
 					case 4: // "4.4. 지원 취소" 메뉴 부분
@@ -229,7 +233,14 @@ void apply(DataBase* dataBase, File* file) {
    ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
    applyRecruitmentUI->selectApply(applyRecruitment, file);
 }
-// 4.2. 지원 취소
+
+// 4.3. 지원 정보 조회
+void listMyApply(DataBase* dataBase, File* file) {
+    ListMyApply* listMyApply = new ListMyApply(dataBase);
+    listMyApply->getListMyApplyUI()->selectShowApplyList(listMyApply, file);
+}
+
+// 4.4. 지원 취소
 void cancelApply(DataBase* dataBase, File* file) {
    CancelApply* cancelApply = new CancelApply(dataBase);
    CancelApplyUI* cancelApplyUI = new CancelApplyUI();
