@@ -19,11 +19,15 @@ using namespace std;
 
 #include "CreateRecruitmentUI.h"
 #include "CreateRecruitment.h"
+#include "ListMyRecruitmentUI.h"
+#include "ListMyRecruitment.h"
 
 #include "SearchRecruitmentUI.h"
 #include "SearchRecruitment.h"
 #include "ApplyRecruitmentUI.h"
 #include "ApplyRecruitment.h"
+#include "ListMyApplyUI.h"
+#include "ListMyApply.h"
 
 // 상수 선언
 #define MAX_STRING 32
@@ -37,8 +41,10 @@ void withdraw(DataBase* dataBase, File* file);
 void login(DataBase* dataBase, File* file);
 void logout(DataBase* dataBase, File* file);
 void createRecruitment(DataBase* dataBase, File* file);
+void listMyRecruitment(DataBase* dataBase, File* file);
 void searchRecruitment(DataBase* dataBase, File* file);
 void apply(DataBase* dataBase, File* file);
+void listMyApply(DataBase* dataBase, File* file);
 void program_exit(File* file);
 
 int main() {
@@ -108,6 +114,7 @@ void doTask() {
 					}
 					case 2: // "3.2. 등록된 채용 정보 조회" 메뉴 부분
 					{
+                        listMyRecruitment(dataBase, file);
 						break;
 					}
                     default:
@@ -129,6 +136,7 @@ void doTask() {
 					}
 					case 3: // "4.3. 지원 정보 조회" 메뉴 부분
 					{
+                        listMyApply(dataBase, file);
                         break;
 					}
 					case 4: // "4.4. 지원 취소" 메뉴 부분
@@ -203,6 +211,12 @@ void createRecruitment(DataBase* dataBase, File* file){
     createRecruitment->getCreateRecruitmentUI()->getRecruitmentForm(createRecruitment, file);
 }
 
+// 3.2. 등록된 채용 정보 조회
+void listMyRecruitment(DataBase* dataBase, File* file) {
+	ListMyRecruitment* listMyRecruitment = new ListMyRecruitment(dataBase);
+	listMyRecruitment->getListMyRecruitmentUI()->selectShowRecruitmentList(listMyRecruitment, file);
+}
+
 // 4.1. 채용 정보 검색
 void searchRecruitment(DataBase* dataBase, File* file) {
    SearchRecruitment* searchRecruitment = new SearchRecruitment(dataBase);
@@ -214,6 +228,12 @@ void apply(DataBase* dataBase, File* file) {
    ApplyRecruitment* applyRecruitment = new ApplyRecruitment(dataBase);
    ApplyRecruitmentUI* applyRecruitmentUI = new ApplyRecruitmentUI();
    applyRecruitmentUI->selectApply(applyRecruitment, file);
+}
+
+// 4.3. 지원 정보 조회
+void listMyApply(DataBase* dataBase, File* file) {
+    ListMyApply* listMyApply = new ListMyApply(dataBase);
+    listMyApply->getListMyApplyUI()->selectShowApplyList(listMyApply, file);
 }
 
 // 6.1. 종료
