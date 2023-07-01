@@ -88,3 +88,17 @@
   * 회사 회원이 현재까지 등록한 모든 채용 정보에 대해 신청 마감시간 기준으로 연도별, 직책별 및 업무별 지원자 수를 출력한다.
   * 일반 회원은 본인이 지원한 정보에 대해 마감시간 기준으로 월별, 직책별, 업무별 지원 횟수를 출력한다.
   * 매월 말일에 각 회원에게 해당 통계 정보를 이메일로 발송한다.
+
+## Usecase Diagram
+
+<img src="./images/1.png" width="100%" height="100%"/>
+
+## Design Class Diagram
+
+<img src="./images/2.png" width="100%" height="100%"/>
+<img src="./images/3.png" width="100%" height="100%"/>
+<img src="./images/4.png" width="100%" height="100%"/>
+
+## Notion
+
+* [Notion Link](https://www.notion.so/2fbf94fe532e47ed8958407022f00082 "소프트웨어공학 팀프로젝트")
