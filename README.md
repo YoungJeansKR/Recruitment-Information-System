@@ -3,6 +3,21 @@
 * 이 프로젝트에서는 채용 정보 시스템을 개발한다.
 * 이 시스템에서는 회사는 면접이 필요한 채용 정보를 등록해서 지원자를 모집할 수 있고 지원자는 회사에 지원하고 관련 서비스를 이용할 수 있다.
 
+## People
+
+* [Yeongjin Kim](https://github.com/kyj950514 "김영진")
+* [Seungjin Baek](https://github.com/Seung-Jie "백승진")
+* [Wonjin Kim](https://github.com/kim-wonjin "김원진")
+* [Yeongeun Lee](https://github.com/ye0ngeun "이영은")
+
+## Language / IDE
+
+* <img src="https://img.shields.io/badge/C++-00599C?style=flat&logo=C++&logoColor=white"/>
+* <img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=flat&logo=Visual Studio&logoColor=white"/>
+* <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/>
+* <img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white"/>
+* <img src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=Slack&logoColor=white"/>
+
 ## Function
 
 * 회원 가입 기능
