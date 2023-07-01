@@ -1,4 +1,4 @@
-## Overview
+## Overviews
 
 * 이 프로젝트에서는 채용 정보 시스템을 개발한다.
 * 이 시스템에서는 회사는 면접이 필요한 채용 정보를 등록해서 지원자를 모집할 수 있고 지원자는 회사에 지원하고 관련 서비스를 이용할 수 있다.
@@ -18,7 +18,7 @@
 * <img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white"/>
 * <img src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=Slack&logoColor=white"/>
 
-## Function
+## Functions
 
 * 회원 가입 기능
   * 사용자는 사용 권한을 얻기 위해서 회원 가입을 해야 한다.
