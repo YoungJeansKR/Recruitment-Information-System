@@ -102,3 +102,4 @@
 ## Links
 
 * [Notion](https://www.notion.so/2fbf94fe532e47ed8958407022f00082 "소프트웨어공학 팀프로젝트")
+* [Slack](https://app.slack.com/client/T05202440SH/C051WC7TYDC "소공 과제_15")
