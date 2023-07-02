@@ -99,7 +99,6 @@
 <img src="./images/3.png" width="100%" height="100%"/>
 <img src="./images/4.png" width="100%" height="100%"/>
 
-## Links
+## Link
 
-* [Notion](https://www.notion.so/2fbf94fe532e47ed8958407022f00082 "소프트웨어공학 팀프로젝트")
-* [Slack](https://app.slack.com/client/T05202440SH/C051WC7TYDC "소공 과제_15")
+* [Notion](https://hill-crow-f2e.notion.site/2fbf94fe532e47ed8958407022f00082 "소프트웨어공학 팀프로젝트")
