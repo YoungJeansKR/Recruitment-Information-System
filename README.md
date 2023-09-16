@@ -5,10 +5,10 @@
 
 ## People
 
-* [Yeongjin Kim](https://github.com/youngjeanskr "김영진")
-* [Seungjin Baek](https://github.com/Seung-Jie "백승진")
-* [Wonjin Kim](https://github.com/kim-wonjin "김원진")
-* [Yeongeun Lee](https://github.com/ye0ngeun "이영은")
+* [YoungJeansKR](https://github.com/youngjeanskr "김영진")
+* [Seung-Jie](https://github.com/Seung-Jie "백승진")
+* [kim-wonjin](https://github.com/kim-wonjin "김원진")
+* [ye0ngeun](https://github.com/ye0ngeun "이영은")
 
 ## Language / IDE
 
